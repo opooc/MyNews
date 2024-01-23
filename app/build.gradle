@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+apply from: '../common.gradle'
+
+android {
+    namespace 'com.kuaishou.mynews'
+
+    defaultConfig {
+        applicationId "com.kuaishou.mynews"
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // 开启ViewBinding时，这个会在编译期间对应xml自动生成一个类。
+    viewBinding {
+        //开启视图绑定，用来替代findViewById
+        //官方文档：https://developer.android.com/topic/libraries/view-binding
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0' //这个"同意"是按钮库
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation project(":super-k")
+    //UI框架，主要是用他的工具类，也可以单独拷贝出来
+    //https://qmuiteam.com/android/get-started
+    implementation 'com.qmuiteam:qmui:2.1.0'
+
+    //权限框架
+//https://github.com/guolindev/PermissionX
+    implementation 'com.guolindev.permissionx:permissionx:1.7.1'
+
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_large">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/term_service_privacy"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="17sp"
+        android:textStyle="bold" /> <!--字体用sp-->
+    <!-- attr 代表着 系统资源-->
+
+    <!--使用ScrollView TextView可以移动-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp">
+
+        <!--lineSpacingMultiplier 设置行高-->
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.3"
+            android:text="@string/term_service_privacy_content"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="15sp" />
+    </ScrollView>
+
+    <!--同意按钮-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/primary"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/super_button_height"
+        android:layout_marginTop="@dimen/padding_large"
+        android:text="@string/agree"
+        app:cornerRadius="@dimen/d27_5" />
+
+    <!--不同意按钮-->
+    <Button
+        android:id="@+id/disagree"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/padding_meddle"
+        android:background="@color/transparent"
+        android:text="@string/disagree"
+        android:textColor="@color/black80"
+        android:textSize="@dimen/text_small" />
+</LinearLayout>

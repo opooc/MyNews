@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <!-- Base application theme. -->
+  <style name="SuperUI.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
+    <!--背景色-->
+    <item name="android:colorBackground">@color/black183</item>
+    <!-- Customize your theme here. -->
+    <item name="colorOnSurface">@color/white</item>
+  </style>
+</resources>

@@ -1,0 +1,15 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.4.2' apply false
+    id 'com.android.library' version '7.4.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+}
+
+//扩展配置
+//相当于定义常量
+//只是我们这里定义的常量是在gradle文件中引用
+//而不是在java文件中引用
+ext {
+    //目标版本
+    targetSdk = 31
+}

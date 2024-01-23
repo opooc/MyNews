@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+  <style name="SuperUI.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
+    <!--背景色？？？-->
+<!--    <item name="colorOnBackground">@color/white</item>-->
+    <!--背景色-->
+    <item name="android:colorBackground">@color/white</item>
+    <!-- 状态栏颜色 -->
+    <item name="android:statusBarColor" tools:targetApi="l">?android:attr/colorBackground</item>
+<!-- 设置主题文本颜色为黑色-->
+    <item name="colorOnSurface">@color/black40</item>
+<!--系统主色调-->
+    <item name="colorPrimary">@color/primary</item>
+
+  </style>
+</resources>
