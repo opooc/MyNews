@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ixuea="http://schemas.android.com/apk/res-auto"
+    xmlns:kuaishou="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".component.splash.SplashActivity">
+
+  <!--左右滚动控件-->
+
+  <!--  &lt;!&ndash;指示器&ndash;&gt;-->
+
+  <androidx.viewpager.widget.ViewPager
+    android:id="@+id/list"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1" />
+
+  <me.relex.circleindicator.CircleIndicator
+    android:id="@+id/indicator"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/guide_indicator_height"
+    ixuea:ci_drawable="@drawable/shape_color_primary"
+    ixuea:ci_drawable_unselected="@drawable/shape_circle_light_grey" />
+
+  <!--region 按钮容器-->
+  <LinearLayout
+      android:layout_marginBottom="@dimen/d30"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!--登录注册按钮-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_or_register"
+        style="@style/SuperButton.Primary"
+        android:layout_width="wrap_content"
+        android:minWidth="@dimen/d130"
+        app:cornerRadius="@dimen/round_small"
+        android:text="@string/login_or_register" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!--立即体验按钮-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/experience_now"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/d55"
+        android:backgroundTint="?attr/colorLightWhite"
+        android:minWidth="@dimen/button_width_large"
+        android:text="@string/experience_now"
+        android:textColor="@color/black80"
+        android:textSize="@dimen/text_small"
+        app:strokeColor="?attr/colorPrimary"
+        app:cornerRadius="@dimen/round_small"
+        kuaishou:strokeWidth="@dimen/d1" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+  </LinearLayout>
+  <!--endregion-->
+</LinearLayout>

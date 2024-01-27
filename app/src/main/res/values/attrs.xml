@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--浅白色，功能是根据主题自动变化的白色，白天：纯白，夜间：浅一点的白色-->
+    <attr name="colorLightWhite" format="color" />
+
+    <!--分割线颜色-->
+    <attr name="colorDivider" format="color" />
+
+    <!--次要文本颜色-->
+    <attr name="colorOnTextSecondary" format="color" />
+
+    <!--侧滑背景属性-->
+    <attr name="colorSlideBackground" format="color" />
+
+    <!--colorSurface点击颜色-->
+    <attr name="colorSurfaceClick" format="color" />
+
+    <!--Toolbar背景颜色-->
+    <attr name="colorToolbar" format="color" />
+
+    <!--定义一个颜色属性，用来设置TabBar背景-->
+    <attr name="colorTabBar" format="color" />
+</resources>

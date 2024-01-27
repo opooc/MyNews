@@ -7,13 +7,16 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.Manifest
+import android.content.Intent
 import com.kuaishou.k.StringUtil
 import com.kuaishou.mynews.R
 import com.kuaishou.mynews.activity.BaseTitleActivity
 import com.kuaishou.mynews.activity.BaseViewModelActivity
+import com.kuaishou.mynews.component.guide.GuideActivity
 import com.kuaishou.mynews.databinding.ActivitySplashBinding
 import com.kuaishou.mynews.superui.util.SuperDarkUtil
 import com.kuaishou.mynews.util.DefaultPreferenceUtil
+import com.kuaishou.mynews.util.PreferenceUtil
 import com.permissionx.guolindev.PermissionX
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 import kotlin.math.log
@@ -86,7 +89,12 @@ class SplashActivity : BaseViewModelActivity<ActivitySplashBinding>() { //这个
     }
 
     private fun prepareNext() {
-        Log.d(TAG, "prepareNext: ")
+//        if (PreferenceUtil.isShowGuide()) {
+            startActivityAfterFinishThis(GuideActivity::class.java)
+//        } else {
+//            // tiaozh
+//            print("122222")
+//        }
     }
 
 
