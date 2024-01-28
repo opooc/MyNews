@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.Manifest
 import android.content.Intent
 import com.kuaishou.k.StringUtil
+import com.kuaishou.mynews.MainActivity
 import com.kuaishou.mynews.R
 import com.kuaishou.mynews.activity.BaseTitleActivity
 import com.kuaishou.mynews.activity.BaseViewModelActivity
@@ -68,6 +69,7 @@ class SplashActivity : BaseViewModelActivity<ActivitySplashBinding>() { //这个
 
         PermissionX.init(this)
             .permissions(
+                Manifest.permission.INTERNET,
                 Manifest.permission.CAMERA,
                 Manifest.permission.RECORD_AUDIO,
                 Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -89,12 +91,11 @@ class SplashActivity : BaseViewModelActivity<ActivitySplashBinding>() { //这个
     }
 
     private fun prepareNext() {
-//        if (PreferenceUtil.isShowGuide()) {
+        if (PreferenceUtil.isShowGuide()) {
             startActivityAfterFinishThis(GuideActivity::class.java)
-//        } else {
-//            // tiaozh
-//            print("122222")
-//        }
+        } else {
+            startActivityAfterFinishThis(MainActivity::class.java)
+        }
     }
 
 

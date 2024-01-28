@@ -1,9 +1,20 @@
 package com.kuaishou.mynews.component.guide
 
+import android.content.Intent
+import android.util.Log
+import com.kuaishou.mynews.MainActivity
 import com.kuaishou.mynews.R
 import com.kuaishou.mynews.activity.BaseViewModelActivity
+import com.kuaishou.mynews.config.Config
 import com.kuaishou.mynews.databinding.ActivityGuideBinding
+import com.kuaishou.mynews.util.Constant
 import com.kuaishou.mynews.util.PreferenceUtil
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.Response
+import java.io.IOException
 
 class GuideActivity : BaseViewModelActivity<ActivityGuideBinding>() {
     private lateinit var adapter: GuideAdapter
@@ -34,15 +45,23 @@ class GuideActivity : BaseViewModelActivity<ActivityGuideBinding>() {
         super.initListeners()
         binding.loginOrRegister.setOnClickListener {
             setShowGuide()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.action = Constant.ACTION_LOGIN
+            startActivity(intent)
+            finish()
         }
         binding.experienceNow.setOnClickListener {
             setShowGuide()
+            startActivityAfterFinishThis(MainActivity::class.java)
+
+
         }
     }
     private fun setShowGuide() {
         PreferenceUtil.setShowGuide(false)
     }
-    companion object {
 
+    companion object {
+        const val TAG = "GuideActivity"
     }
 }
